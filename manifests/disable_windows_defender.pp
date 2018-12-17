@@ -1,4 +1,4 @@
-class win_defend::diasable_windows_defender {
+class win_defend::disable_windows_defender {
 
 	service { wuauserv :
 		ensure => 'stopped',
