@@ -5,19 +5,19 @@ class win_defend::disable_windows_defender {
 		enable => 'false',
 	}
 
-	registry_value { 'hklm\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching\SearchOrderConfig' :
-		ensure  => present,
-		type    => dword,
-		data    => "0",
+	registry::value { 'SearchOrderConfig':
+		key  => 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching',
+		type => dword,
+		data => '0',
 	}
-	registry_value { 'hklm\SOFTWARE\Microsoft\Windows\Windows\AU\NoAutoUpdate'  :
-		ensure => present,
-		type   => dword,
-		data   => "1",
+	registry::value { 'NoAutoUpdate':
+		key  => 'HKLM\SSOFTWARE\Microsoft\Windows\Windows\AU',
+		type => dword,
+		data => '1',
 	}
-	registry_value { 'hklm\SOFTWARE\Microsoft\Windows\Windows\AU\AUOptions' :
-		ensure => present,
-		type   => dword,
-		data   => "2",
+	registry::value { 'AUOptions':
+		key  => 'HKLM\SOFTWARE\Microsoft\Windows\Windows\AU',
+		type => dword,
+		data => '10'
 	}
 }
