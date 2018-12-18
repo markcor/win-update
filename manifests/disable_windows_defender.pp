@@ -11,7 +11,7 @@ class win_defend::disable_windows_defender {
 		data => '0',
 	}
 	registry::value { 'NoAutoUpdate':
-		key  => 'HKLM\SSOFTWARE\Microsoft\Windows\Windows\AU',
+		key  => 'HKLM\SOFTWARE\Microsoft\Windows\Windows\AU',
 		type => dword,
 		data => '1',
 	}
