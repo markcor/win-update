@@ -18,6 +18,6 @@ class win_defend::disable_windows_defender {
 	registry::value { 'AUOptions':
 		key  => 'HKLM\SOFTWARE\Microsoft\Windows\Windows\AU',
 		type => dword,
-		data => '10'
+		data => '2'
 	}
 }
