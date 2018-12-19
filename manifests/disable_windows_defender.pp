@@ -1,4 +1,4 @@
-class win_defend::disable_windows_defender {
+class win_update::disable_windows_update {
 
 	service { wuauserv :
 		ensure => 'stopped',
